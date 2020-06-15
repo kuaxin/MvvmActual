@@ -1,15 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="22mm"
+    android:layout_marginRight="22mm"
+    >
+    <RelativeLayout
+        android:id="@+id/rl_login_title"
+        android:layout_width="match_parent"
+        android:visibility="invisible"
+        android:layout_height="96mm">
+        <ImageView
+            android:id="@+id/img_home_title"
+            android:layout_width="82mm"
+            android:layout_height="82mm"
+            android:src="@drawable/icon_title"
+            android:layout_marginTop="14mm"
+            />
+        <TextView
+            android:id="@+id/tv_home_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mumu"
+            android:textColor="@color/text_dart_blue"
+            android:textSize="28mm"
+            android:layout_marginLeft="16mm"
+            android:layout_toRightOf="@+id/img_home_title"
+            android:layout_marginTop="18mm"
+            />
+        <TextView
+            android:id="@+id/tv_home_age"
+            android:layout_alignLeft="@id/tv_home_name"
+            android:layout_below="@id/tv_home_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mumu"
+            android:textColor="#717B99"
+            android:textSize="22mm"
+            android:layout_toRightOf="@+id/img_home_title"
+            android:layout_marginTop="5mm"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_nologin_title"
+        android:layout_width="match_parent"
+        android:layout_height="96mm">
+        <RelativeLayout
+            android:layout_marginTop="17mm"
+            android:layout_width="218mm"
+            android:layout_height="60mm"
+            android:background="@drawable/bg_login_light_gray"
+            android:layout_centerVertical="true"
+            >
+            <ImageView
+                android:id="@+id/img_nlogin_home_title"
+                android:layout_width="38mm"
+                android:layout_height="38mm"
+                android:src="@drawable/ic_gift"
+                android:layout_marginLeft="26mm"
+                android:layout_centerVertical="true"
+                />
+            <TextView
+                android:id="@+id/tv_nlogin_home_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="点击登录"
+                android:textColor="#717B99"
+                android:textSize="26mm"
+                android:layout_marginLeft="16mm"
+                android:layout_toRightOf="@+id/img_nlogin_home_title"
+                android:layout_centerVertical="true"
+                />
+        </RelativeLayout>
+    </RelativeLayout>
 
-    <ImageView
-        android:id="@+id/img_home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        tools:ignore="InOrMmUsage" />
-
-
-
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/srl_home"
+        android:layout_below="@id/rl_login_title"
+        android:layout_marginTop="20mm"
+        android:layout_marginBottom="30mm"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            ></androidx.recyclerview.widget.RecyclerView>
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
 </RelativeLayout>

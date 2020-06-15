@@ -7,4 +7,8 @@
 
     <color name="colorTextLightBlue">#A8D8FF</color>
 
+    <!-- 通用配色 -->
+    <color name="text_light_blue">#65BAFF</color>
+    <color name="text_dart_blue">#384A74</color>
+
 </resources>

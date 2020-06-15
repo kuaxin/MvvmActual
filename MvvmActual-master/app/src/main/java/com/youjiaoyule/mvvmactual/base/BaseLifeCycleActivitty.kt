@@ -96,5 +96,4 @@ abstract class BaseLifeCycleActivitty<VM :BaseViewModel<*>>: BaseActivity() {
     override fun onHandlerReceive(msg: Message) {
 
     }
-
 }

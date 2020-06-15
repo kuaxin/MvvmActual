@@ -1,21 +1,21 @@
 package com.youjiaoyule.mvvmactual
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+import android.os.Message
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.youjiaoyule.mvvmactual.activity.home.HomeFragment
+import com.youjiaoyule.mvvmactual.base.BaseActivity
 import com.youjiaoyule.mvvmactual.base.BaseFragment
 import com.youjiaoyule.mvvmactual.utils.FragmentUtils
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
     var homeFragment:BaseFragment? = null
     var mineFragment:BaseFragment? = null
     var classifyFragment:BaseFragment? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+    override fun getLayoutId(): Int = R.layout.activity_main
+
+    override fun initView() {
         addFragment()
         FragmentUtils.showFragment(homeFragment!!)
         bottom_navigation.setOnNavigationItemSelectedListener(BottomNavigationView.OnNavigationItemSelectedListener {
@@ -37,6 +37,14 @@ class MainActivity : AppCompatActivity() {
 
             false
         })
+    }
+
+    override fun initDate() {
+
+    }
+
+    override fun onHandlerReceive(msg: Message) {
+
     }
 
     private fun addFragment() {

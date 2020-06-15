@@ -2,6 +2,7 @@ package com.youjiaoyule.mvvmactual.module.home
 
 import androidx.lifecycle.MutableLiveData
 import com.wjx.android.wanandroidmvvm.common.state.State
+import com.youjiaoyule.mvvmactual.activity.home.adapter.bean.HDData
 import com.youjiaoyule.mvvmactual.base.ApiRepository
 import com.youjiaoyule.mvvmactual.net.dataConvert
 
@@ -11,15 +12,15 @@ import com.youjiaoyule.mvvmactual.net.dataConvert
  */
 class HomeRepository(private val loadState: MutableLiveData<State>): ApiRepository() {
 
-    suspend fun loadBannerCo(): HomeBean{
+    /**
+     * @param adType 4 Banner 6 Icon
+     */
+    suspend fun loadIconData(adType: Int): List<HDData>{
         val hm =
             HashMap<String, Any>()
-        hm["currentPage"] = 1
-        hm["pageSize"] = 1
+        hm["adType"] = adType
 
-        return apiService.loadHomeBean("/api/v2/front/sentence",hm).dataConvert(loadState)
+        return apiService.loadHomeData("/api/v2/front/adPic/getAdPicByAdType",hm).dataConvert(loadState)
     }
-
-
 
 }

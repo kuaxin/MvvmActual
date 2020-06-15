@@ -28,6 +28,9 @@ abstract class BaseActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(getLayoutId())
+
+        AppManager.addActivity(this)
+
         initView()
         initDate()
     }
@@ -44,8 +47,6 @@ abstract class BaseActivity: AppCompatActivity() {
     abstract fun onHandlerReceive(msg: Message)
 
     override fun onBackPressed() {
-        super.onBackPressed()
-
         if(AppManager.isLastActivity(this)){
             doExit()
         }else{
@@ -55,6 +56,7 @@ abstract class BaseActivity: AppCompatActivity() {
 
     //退出App
     private fun doExit() {
+
         if(System.currentTimeMillis() - mExitTime > 2000){
             ToastUtils.show(resources.getString(R.string.exit_app))
             mExitTime = System.currentTimeMillis()
@@ -63,5 +65,8 @@ abstract class BaseActivity: AppCompatActivity() {
         }
     }
 
-
+    override fun onDestroy() {
+        super.onDestroy()
+        AppManager.removeActivity(this)
+    }
 }

@@ -14,10 +14,7 @@ import kotlinx.android.synthetic.main.activity_home.*
 class HomeActivity: BaseLifeCycleActivitty<HomeViewModel>() {
     override fun initDataObserver() {
         mViewModel.homeData.observe(this, Observer {
-            val dailySentenceList = it.dailySentenceList
-            val dailySentence = dailySentenceList[0]
-            tv_china.text = dailySentence.sentenceChContent
-            Glide.with(this).load("http://wdkid-sentence.oss-cn-beijing.aliyuncs.com/20200518-24/20200611.jpg").into(img_word)
+
         })
     }
 
@@ -27,7 +24,6 @@ class HomeActivity: BaseLifeCycleActivitty<HomeViewModel>() {
 
     override fun initDate() {
 
-        mViewModel.loadHomeBean()
     }
 
     override fun initView() {

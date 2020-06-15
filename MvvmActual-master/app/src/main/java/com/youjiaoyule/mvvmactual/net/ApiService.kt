@@ -1,5 +1,6 @@
 package com.youjiaoyule.mvvmactual.net
 
+import com.youjiaoyule.mvvmactual.activity.home.adapter.bean.HDData
 import com.youjiaoyule.mvvmactual.module.home.HomeBean
 import com.youjiaoyule.mvvmactual.net.response.BaseResponse
 import retrofit2.http.GET
@@ -13,6 +14,6 @@ import retrofit2.http.Url
 interface ApiService {
 
     @GET
-    suspend fun loadHomeBean(@Url url:String, @QueryMap params:HashMap<String, Any>):BaseResponse<HomeBean>
+    suspend fun loadHomeData(@Url url:String, @QueryMap params:HashMap<String, Any>):BaseResponse<List<HDData>>
 
 }

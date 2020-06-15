@@ -12,14 +12,11 @@ import com.youjiaoyule.mvvmactual.base.BaseApplication
  */
 class MyApp: BaseApplication() {
 
-
     init {
         SmartRefreshLayout.setDefaultRefreshHeaderCreator { context, layout ->
-            layout.autoRefresh(1500)
             return@setDefaultRefreshHeaderCreator ClassicsHeader(context)
         }
         SmartRefreshLayout.setDefaultRefreshFooterCreator { context, layout ->
-            layout.autoRefresh(1500)
             return@setDefaultRefreshFooterCreator ClassicsFooter(context)
         }
     }
