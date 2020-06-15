@@ -1,3 +1,13 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">MvvmActual</string>
+
+    <string name="navigation_home">首页</string>
+    <string name="navigation_mine">我的</string>
+    <string name="navigation_classify">分类</string>
+
+
+
+    <!-- 退出程序 -->
+    <string name="exit_app">再按一次退出App</string>
+
 </resources>

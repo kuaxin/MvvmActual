@@ -37,4 +37,14 @@ object AppManager {
         exitProcess(0)
     }
 
+    /**
+     * 当前Activity是否为堆栈最后一个Activity
+     *
+     * @return
+     */
+    fun isLastActivity(activity: Activity?): Boolean {
+        return activityStack.size == 1 && activityStack.indexOf(activity) == 0
+    }
+
+
 }

@@ -9,10 +9,9 @@ import com.youjiaoyule.mvvmactual.net.dataConvert
  *  @author RenGX on 2020/6/10
  *
  */
-class HomeRepository(val loadState: MutableLiveData<State>): ApiRepository() {
+class HomeRepository(private val loadState: MutableLiveData<State>): ApiRepository() {
 
     suspend fun loadBannerCo(): HomeBean{
-
         val hm =
             HashMap<String, Any>()
         hm["currentPage"] = 1

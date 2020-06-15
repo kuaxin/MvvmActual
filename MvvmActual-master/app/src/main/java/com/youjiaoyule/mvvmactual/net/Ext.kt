@@ -20,7 +20,7 @@ import kotlinx.coroutines.launch
 fun <T> BaseResponse<T>.dataConvert(
     loadState: MutableLiveData<State>
 ): T {
-    when (error) {
+    when (code) {
         Constant.SUCCESS -> {
             if (data is List<*>) {
                 if ((data as List<*>).isEmpty()) {

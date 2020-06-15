@@ -75,4 +75,9 @@ dependencies {
 
     //自定义Toast
     implementation 'com.hjq:toast:8.0'
+
+    //刷新头
+    implementation 'androidx.appcompat:appcompat:1.1.0'                 //必须 1.0.0 以上
+    implementation  'com.scwang.smart:refresh-layout-kernel:2.0.1'      //核心必须依赖
+    implementation  'com.scwang.smart:refresh-header-classics:2.0.1'    //经典刷新头
 }
