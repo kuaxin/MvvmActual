@@ -22,7 +22,7 @@ import java.util.logging.Logger
  */
 abstract class BaseLifeCycleActivitty<VM :BaseViewModel<*>>: BaseActivity() {
     protected lateinit var mViewModel: VM
-    //
+
     override fun initView() {
         //展示loading
         showLoading()
@@ -35,6 +35,7 @@ abstract class BaseLifeCycleActivitty<VM :BaseViewModel<*>>: BaseActivity() {
         initDataObserver()
     }
 
+    //开始请求数据
     abstract fun initDataObserver()
 
 
@@ -54,6 +55,8 @@ abstract class BaseLifeCycleActivitty<VM :BaseViewModel<*>>: BaseActivity() {
         loadService.showCallback(ErrorCallBack::class.java)
     }
 
+
+    //暂时没有发现什么功能
 //    open fun showTip(msg: String) {
 //        if (!TextUtils.isEmpty(msg)) {
 //            MaterialDialog(this).show {

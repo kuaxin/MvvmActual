@@ -67,7 +67,7 @@ abstract class BaseLifeCycleFragment<VM: BaseViewModel<*>>: BaseFragment() {
 
     override fun reLoad() {
         super.reLoad()
-        initData()
+        lazyLoad()
     }
 
     //子类可以选择重写
